@@ -1,70 +1,440 @@
-# Getting Started with Create React App
+# Project Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Expenses App (Name TBA)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+The app is designed to make it easier splitting bills in a group. The target audience will be young travellers.
 
-### `npm start`
+### Problem
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+When travelling with a group of friends, there are often group bills that are accumalated and are difficult to keep track of. Expenses App's aim is to make the process simplier and easier to share expenses.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### User Profile
 
-### `npm test`
+- Young travelers:
+  - looking to keep track of shared expenses with friends
+  - wanting to split bills easily
+  - needing to see their share of expenses clearly
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Features
 
-### `npm run build`
+- As a user, I want to create an account to managed my shared expenses.
+- As a user, I want to log in to my account to managed shared expenses.
+- As a user, I want to create groups for different trips or events.
+- As a user, I want to add friends to my groups.
+- As a logged in user, I want record expenses for each group.
+- As a logged in user, I want to split expenses among group members.
+- As a logged in user, I want to see the total expenses for each group.
+- As a logged in user, I want to see the balance owed or due for each member in a group.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Implementation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React
+- MySQL
+- Express
+- Client libraries:
+  - react
+  - react-router
+  - axios
+  - sass
+- Server libraries:
+  - knex
+  - express
 
-### `npm run eject`
+### APIs
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- No external APIs will be used for the first sprint
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Sitemap
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Home page
+- List groups
+- View group details
+- Register
+- Login
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Mockups
 
-## Learn More
+#### Home Page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![](home.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Register Page
 
-### Code Splitting
+![](register.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Login Page
 
-### Analyzing the Bundle Size
+![](login.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Enter Location Page
 
-### Making a Progressive Web App
+![](enter-location.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### View Cafés Page
 
-### Advanced Configuration
+![](view-cafes.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### View Café Page
 
-### Deployment
+![](view-cafe.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### View Café Page (Rated state)
 
-### `npm run build` fails to minify
+![](view-cafe-rated.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Data
+
+![](sql-diagram.png)
+
+### Endpoints
+
+**GET /groups**
+
+- Get all groups for a logged-in user
+
+Response:
+
+```
+[
+    {
+        "id": 1,
+        "name": "Trip to Paris",
+        "created_at": "2024-05-21T15:30:00Z",
+        "updated_at": "2024-05-21T15:30:00Z"
+    },
+    ...
+]
+```
+
+**GET /groups/:id**
+
+- Get groups by id
+
+Parameters:
+
+- id: groups id as number
+
+Response:
+
+```
+{
+    "id": 1,
+    "name": "Trip to Paris",
+    "created_at": "2024-05-21T15:30:00Z",
+    "updated_at": "2024-05-21T15:30:00Z",
+    "members": [
+        {
+            "id": 1,
+            "username": "user1"
+        },
+        ...
+    ],
+    "expenses": [
+        {
+            "id": 1,
+            "title": "Dinner",
+            "total_amount": 100.00,
+            "date": "2024-05-21",
+            "items": [
+                {
+                    "user_id": 1,
+                    "amount": 50.00
+                },
+                ...
+            ]
+        },
+        ...
+    ]
+}
+```
+
+**POST /groups**
+
+- create a new group
+
+Parameters:
+
+- group name (eg, "Trip to Paris")
+
+Response:
+
+```
+{
+    "id": 1,
+    "name": "Trip to Paris",
+    "created_at": "2024-05-21T15:30:00Z",
+    "updated_at": "2024-05-21T15:30:00Z"
+}
+```
+
+**POST /groups/members**
+
+- add a member to a group
+
+Parameters:
+
+- user_id: user id as a number
+
+Response:
+
+```
+{
+    "id": 1,
+    "user_id": 2,
+    "group_id": 1,
+    "role": "member"
+}
+```
+
+**POST /groups/expenses**
+
+- add an expense to a group
+
+Parameters:
+
+```
+{
+    "title": "Dinner",
+    "total_amount": 100.00,
+    "date": "2024-05-21",
+    "items": [
+        {
+            "user_id": 1,
+            "amount": 50.00
+        },
+        {
+            "user_id": 2,
+            "amount": 50.00
+        }
+    ]
+}
+```
+
+Response:
+
+```
+{
+    "id": 1,
+    "group_id": 1,
+    "title": "Dinner",
+    "total_amount": 100.00,
+    "date": "2024-05-21",
+    "items": [
+        {
+            "user_id": 1,
+            "amount": 50.00
+        },
+        {
+            "user_id": 2,
+            "amount": 50.00
+        }
+    ]
+}
+```
+
+**PUT /groups/:id/**
+
+- Logged in user can update group details
+
+Parameters:
+
+```
+{
+"id": "1",
+"name": "Trip to London"
+}
+```
+
+Response:
+
+```
+{
+    "id": 1,
+    "name": "Trip to London",
+    "created_at": "2024-05-21T15:30:00Z",
+    "updated_at": "2024-05-21T15:30:00Z"
+}
+```
+
+**PUT /groups/expenses/:id**
+
+- Logged in user can update expenses
+
+Parameters:
+
+```
+{
+    "title": "Brunch",
+    "total_amount": 150.00,
+    "date": "2024-05-22",
+    "items": [
+        {
+            "user_id": 1,
+            "amount": 75.00
+        },
+        {
+            "user_id": 2,
+            "amount": 75.00
+        }
+    ]
+}
+```
+
+Response:
+
+```
+{
+    "id": 1,
+    "group_id": 1,
+    "title": "Brunch",
+    "total_amount": 150.00,
+    "date": "2024-05-22",
+    "items": [
+        {
+            "user_id": 1,
+            "amount": 75.00
+        },
+        {
+            "user_id": 2,
+            "amount": 75.00
+        }
+    ]
+}
+```
+
+**DELETE /groups/expenses/:id**
+
+- delete an expense from a group
+
+Parameters:
+
+- group_id: group id in the form of a number
+
+Response:
+
+```
+{
+    "message": "Expense successfully deleted."
+}
+```
+
+**DELETE /groups/:id**
+
+- delete a group
+
+Parameters:
+
+- group_id: group id in the form of a number
+
+Response:
+
+```
+{
+    "message": "Group successfully deleted."
+}
+```
+
+**POST /users/login**
+
+- Login a user
+
+Parameters:
+
+- email: User's email
+- password: User's provided password
+
+Response:
+
+```
+{
+    "token": "seyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6I..."
+}
+```
+
+### Auth
+
+- There will be no auth on the first sprint
+
+## Roadmap
+
+- Create client
+
+  - react project with routes and boilerplate pages
+
+- Create server
+
+  - express project with routing, with placeholder 200 responses
+
+- Create migrations
+
+- Gather sample data
+
+  - collect sample groups and expense data
+
+- Create seeds with sample data
+
+- Deploy projects
+
+  - Deploy client and server projects so all commits will be reflected in production
+
+- Feature: List groups
+
+  - Implement list groups page
+  - Create GET /groups endpoint
+
+- Feature: View group
+
+  - Implement view group page
+  - Create GET /groups/
+    endpoint
+
+- Feature: Add expense
+
+  - Add form input to view café page
+  - Create POST /ratings
+  - States for add & update ratings
+
+- Feature: Update group
+
+- Feature: Create account
+
+  - Implement update group form
+  - Create PUT /groups/
+    endpoint
+
+- Feature: Update expense
+
+  - Implement update expense form
+  - Create PUT /groups/
+    /expenses/
+    endpoint
+
+- Feature: Delete expense
+
+  - Implement delete expense functionality
+  - Create DELETE /groups/
+    /expenses/
+    endpoint
+
+- Feature: Home page
+
+- Feature: Create account
+
+  - Implement register page + form
+  - Create POST /users/register endpoint
+
+- Bug fixes
+
+- DEMO DAY
+
+## Nice-to-haves
+
+- Add authentication to the app
+- Add a currency conversion API
+- Add notification via a third party API (sending email notifications)
+- Forgot password functionality
+- Add photo upload for avatars
