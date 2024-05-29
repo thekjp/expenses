@@ -70,21 +70,13 @@ When travelling with a group of friends, there are often group bills that are ac
 
 ![](login.png)
 
-#### Enter Location Page
+#### View Groups Page
 
-![](enter-location.png)
+![](view-groups.png)
 
-#### View Cafés Page
+#### View Group Page
 
-![](view-cafes.png)
-
-#### View Café Page
-
-![](view-cafe.png)
-
-#### View Café Page (Rated state)
-
-![](view-cafe-rated.png)
+![](view-group.png)
 
 ### Data
 
