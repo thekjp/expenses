@@ -384,19 +384,23 @@ Response:
   - Create GET /groups/
     endpoint
 
-- Feature: Add expense
+- Feature: Add group
 
-  - Add form input to view café page
-  - Create POST /ratings
-  - States for add & update ratings
+  - Add form input to add group
 
 - Feature: Update group
-
-- Feature: Create account
 
   - Implement update group form
   - Create PUT /groups/
     endpoint
+
+- Feature: Create account
+
+  - Implement form to create account
+
+- Feature: Add expense
+
+  - Add form input to add expense
 
 - Feature: Update expense
 
@@ -430,3 +434,4 @@ Response:
 - Add notification via a third party API (sending email notifications)
 - Forgot password functionality
 - Add photo upload for avatars
+- Add search functionality
