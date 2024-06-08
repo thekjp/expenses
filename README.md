@@ -435,3 +435,5 @@ Response:
 - Forgot password functionality
 - Add photo upload for avatars
 - Add search functionality
+- Add categories to groups
+- Add categories to expenses
