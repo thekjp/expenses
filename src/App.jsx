@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import Footer from "./components/Footer/Footer";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MainPage from "./pages/MainPage/MainPage";
-// import GroupsList from "./components/GroupsList/GroupsList";
+import GroupsList from "./components/GroupsList/GroupsList";
 // import AddGroup from "./components/AddGroup/AddGroup";
 // import GroupItem from "./components/GroupItem/GroupItem";
 // import EditGroup from "./components/EditGroup/EditGroup";
@@ -21,8 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/main" element={<MainPage />} />
-          {/* <Route path="/groups" element={<GroupsList />} />
-          <Route path="/groups/add" element={<AddGroup />} />
+          <Route path="/groups" element={<GroupsList />} />
+          {/*<Route path="/groups/add" element={<AddGroup />} />
           <Route path="/groups/:id" element={<GroupItem />} />
           <Route path="/groups/:id/edit" element={<EditGroup />} />
           <Route path="/expenses" element={<ExpensesList />} />
