@@ -2,3 +2,6 @@
 @use '../../styles/partials/_mixins' as *;
 @use '../../styles/partials/_variables' as *;
 
+.groups-item__actions-link {
+    cursor: pointer;
+}

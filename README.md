@@ -437,3 +437,4 @@ Response:
 - Add search functionality
 - Add categories to groups
 - Add categories to expenses
+- Add page not found
