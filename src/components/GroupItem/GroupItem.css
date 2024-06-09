@@ -1,43 +1,49 @@
 /* -------------------------------------------------------------------------- */
 /*                                   COLORS                                   */
 /* -------------------------------------------------------------------------- */
-
 /* --------------------------------- PRIMARY -------------------------------- */
-
-$p-dark: #13182C;
-$p-light: #FFF;
-$p-highlight: #2E66e5;
-$p-highlight-opague: rgba(46, 101, 229, 0.07);
-
 /* -------------------------------- SECONDARY ------------------------------- */
-
-$s-dark: #5C667E;
-$s-light: #BDC5D5;
-
 /* ---------------------------- BACKGROUND COLORS --------------------------- */
-
-$bg-dark: #232940;
-$bg-light: #F7F8F9;
-
 /* ---------------------------- SUPPORTING COLORS --------------------------- */
-
-$spt-one: #158463;
-$spt-two:#C94515;
-
 /* -------------------------------------------------------------------------- */
 /*                                   PADDING                                  */
 /* -------------------------------------------------------------------------- */
-
 /* --------------------------------- MOBILE --------------------------------- */
-
-$m-padding: 1rem;
-
 /* --------------------------------- DESKTOP -------------------------------- */
-
-$d-padding: 1.5rem;
-
 /* -------------------------------------------------------------------------- */
 /*                                  ANIMATION                                 */
 /* -------------------------------------------------------------------------- */
-
-$transition: 0.2s;
+.group-item {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 800px;
+  background: #FFF;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.group-item__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.group-item__description {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.group-item__members, .group-item__expenses {
+  margin-bottom: 2rem;
+}
+.group-item__members h2, .group-item__expenses h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.group-item__members ul, .group-item__expenses ul {
+  list-style: none;
+  padding: 0;
+}
+.group-item__members li, .group-item__expenses li {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}/*# sourceMappingURL=GroupItem.css.map */

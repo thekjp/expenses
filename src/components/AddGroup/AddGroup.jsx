@@ -28,7 +28,7 @@ function AddGroup() {
       });
       const groupId = response.data.id;
       await axios.post(`${url}/groups/${groupId}/members`, {
-        userId: 1, //change when auth is sorted
+        user_id: 1, //change when auth is setup
         role: "member",
       });
       console.log(response.data);
