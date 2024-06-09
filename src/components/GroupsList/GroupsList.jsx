@@ -7,12 +7,16 @@ import DeleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import EditIcon from "../../assets/icons/edit-24px.svg";
 import axios from "axios";
 import "./GroupsList.scss";
+import DeleteGroup from "../DeleteGroup/DeleteGroup";
 
 const port = 8080;
 const url = `http://localhost:${port}`;
 
 function GroupsList() {
   const [groups, setGroups] = useState([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedGroupId, setSelectedGroupId] = useState(null);
+  const [selectedGroupName, setSelectedGroupName] = useState(null);
 
   useEffect(() => {
     const getGroups = async () => {
@@ -25,6 +29,17 @@ function GroupsList() {
     };
     getGroups();
   }, []);
+
+  const handleDeleteClick = (groupId, groupName) => {
+    setSelectedGroupId(groupId);
+    setSelectedGroupName(groupName);
+    setModalIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedGroupId(null);
+    setModalIsOpen(false);
+  };
 
   return (
     <section className="groups">
@@ -98,7 +113,10 @@ function GroupsList() {
                 </div>
               </div>
               <div className="groups-item__actions-icons-container">
-                <div className="groups-item__actions-link">
+                <div
+                  className="groups-item__actions-link"
+                  onClick={() => handleDeleteClick(group.id, group.name)}
+                >
                   <img
                     className="groups-item__actions-icon"
                     src={DeleteIcon}
@@ -120,6 +138,12 @@ function GroupsList() {
           </li>
         ))}
       </ul>
+      <DeleteGroup
+        isOpen={modalIsOpen}
+        onClose={handleCloseModal}
+        groupId={selectedGroupId}
+        groupName={selectedGroupName}
+      />
     </section>
   );
 }
