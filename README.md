@@ -103,7 +103,7 @@ Response:
         "title": "dinner at joeys",
         "total_amount": "100.00",
         "date": "2024-06-06T07:00:00.000Z",
-        "group_name": "Test trip to test land update name",
+        "group_name": "Trip to Rio",
         "amount": "50.00"
     },
     {
@@ -111,7 +111,7 @@ Response:
         "title": "dinner at joeys",
         "total_amount": "100.00",
         "date": "2024-06-06T07:00:00.000Z",
-        "group_name": "Test trip to test land update name",
+        "group_name": "Trip to Paris",
         "amount": "50.00"
     }
 ]
