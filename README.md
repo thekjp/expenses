@@ -1,6 +1,6 @@
 # Project Title
 
-Expenses App (Name TBA)
+Paymate
 
 ## Overview
 
@@ -18,6 +18,15 @@ When travelling with a group of friends, there are often group bills that are ac
   - needing to see their share of expenses clearly
 
 ### Features
+
+MVP:
+
+- As a user, I want to be able to see my expenses
+- As a user, I want to be able to add an expense
+- As a user, I want to be able to edit an expense
+- As a user, I want to be able to delete an expense
+
+Future Features:
 
 - As a user, I want to create an account to managed my shared expenses.
 - As a user, I want to log in to my account to managed shared expenses.
@@ -50,33 +59,30 @@ When travelling with a group of friends, there are often group bills that are ac
 
 ### Sitemap
 
-- Home page
-- List groups
-- View group details
-- Register
 - Login
+- Dashboard
+- Add expense
+- Edit expense
+
+sitemap image
 
 ### Mockups
 
-#### Home Page
+#### Login Page
 
 ![](home.png)
 
-#### Register Page
+#### HomePage
 
 ![](register.png)
 
-#### Login Page
+#### Add group
 
 ![](login.png)
 
-#### View Groups Page
+#### Edit Group
 
 ![](view-groups.png)
-
-#### View Group Page
-
-![](view-group.png)
 
 ### Data
 
@@ -84,267 +90,31 @@ When travelling with a group of friends, there are often group bills that are ac
 
 ### Endpoints
 
-**GET /groups**
+**GET /expenses/your-expenses**
 
-- Get all groups for a logged-in user
+- Get all expenses for user
 
 Response:
 
 ```
 [
     {
-        "id": 1,
-        "name": "Trip to Paris",
-        "created_at": "2024-05-21T15:30:00Z",
-        "updated_at": "2024-05-21T15:30:00Z"
+        "expense_id": 9,
+        "title": "dinner at joeys",
+        "total_amount": "100.00",
+        "date": "2024-06-06T07:00:00.000Z",
+        "group_name": "Test trip to test land update name",
+        "amount": "50.00"
     },
-    ...
+    {
+        "expense_id": 10,
+        "title": "dinner at joeys",
+        "total_amount": "100.00",
+        "date": "2024-06-06T07:00:00.000Z",
+        "group_name": "Test trip to test land update name",
+        "amount": "50.00"
+    }
 ]
-```
-
-**GET /groups/:id**
-
-- Get groups by id
-
-Parameters:
-
-- id: groups id as number
-
-Response:
-
-```
-{
-    "id": 1,
-    "name": "Trip to Paris",
-    "created_at": "2024-05-21T15:30:00Z",
-    "updated_at": "2024-05-21T15:30:00Z",
-    "members": [
-        {
-            "id": 1,
-            "username": "user1"
-        },
-        ...
-    ],
-    "expenses": [
-        {
-            "id": 1,
-            "title": "Dinner",
-            "total_amount": 100.00,
-            "date": "2024-05-21",
-            "items": [
-                {
-                    "user_id": 1,
-                    "amount": 50.00
-                },
-                ...
-            ]
-        },
-        ...
-    ]
-}
-```
-
-**POST /groups**
-
-- create a new group
-
-Parameters:
-
-- group name (eg, "Trip to Paris")
-
-Response:
-
-```
-{
-    "id": 1,
-    "name": "Trip to Paris",
-    "created_at": "2024-05-21T15:30:00Z",
-    "updated_at": "2024-05-21T15:30:00Z"
-}
-```
-
-**POST /groups/members**
-
-- add a member to a group
-
-Parameters:
-
-- user_id: user id as a number
-
-Response:
-
-```
-{
-    "id": 1,
-    "user_id": 2,
-    "group_id": 1,
-    "role": "member"
-}
-```
-
-**POST /groups/expenses**
-
-- add an expense to a group
-
-Parameters:
-
-```
-{
-    "title": "Dinner",
-    "total_amount": 100.00,
-    "date": "2024-05-21",
-    "items": [
-        {
-            "user_id": 1,
-            "amount": 50.00
-        },
-        {
-            "user_id": 2,
-            "amount": 50.00
-        }
-    ]
-}
-```
-
-Response:
-
-```
-{
-    "id": 1,
-    "group_id": 1,
-    "title": "Dinner",
-    "total_amount": 100.00,
-    "date": "2024-05-21",
-    "items": [
-        {
-            "user_id": 1,
-            "amount": 50.00
-        },
-        {
-            "user_id": 2,
-            "amount": 50.00
-        }
-    ]
-}
-```
-
-**PUT /groups/:id/**
-
-- Logged in user can update group details
-
-Parameters:
-
-```
-{
-"id": "1",
-"name": "Trip to London"
-}
-```
-
-Response:
-
-```
-{
-    "id": 1,
-    "name": "Trip to London",
-    "created_at": "2024-05-21T15:30:00Z",
-    "updated_at": "2024-05-21T15:30:00Z"
-}
-```
-
-**PUT /groups/expenses/:id**
-
-- Logged in user can update expenses
-
-Parameters:
-
-```
-{
-    "title": "Brunch",
-    "total_amount": 150.00,
-    "date": "2024-05-22",
-    "items": [
-        {
-            "user_id": 1,
-            "amount": 75.00
-        },
-        {
-            "user_id": 2,
-            "amount": 75.00
-        }
-    ]
-}
-```
-
-Response:
-
-```
-{
-    "id": 1,
-    "group_id": 1,
-    "title": "Brunch",
-    "total_amount": 150.00,
-    "date": "2024-05-22",
-    "items": [
-        {
-            "user_id": 1,
-            "amount": 75.00
-        },
-        {
-            "user_id": 2,
-            "amount": 75.00
-        }
-    ]
-}
-```
-
-**DELETE /groups/expenses/:id**
-
-- delete an expense from a group
-
-Parameters:
-
-- group_id: group id in the form of a number
-
-Response:
-
-```
-{
-    "message": "Expense successfully deleted."
-}
-```
-
-**DELETE /groups/:id**
-
-- delete a group
-
-Parameters:
-
-- group_id: group id in the form of a number
-
-Response:
-
-```
-{
-    "message": "Group successfully deleted."
-}
-```
-
-**POST /users/login**
-
-- Login a user
-
-Parameters:
-
-- email: User's email
-- password: User's provided password
-
-Response:
-
-```
-{
-    "token": "seyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6I..."
-}
 ```
 
 ### Auth
@@ -365,7 +135,7 @@ Response:
 
 - Gather sample data
 
-  - collect sample groups and expense data
+  - collect sample expense data
 
 - Create seeds with sample data
 
@@ -373,55 +143,26 @@ Response:
 
   - Deploy client and server projects so all commits will be reflected in production
 
-- Feature: List groups
+- Feature: View homepage
 
-  - Implement list groups page
-  - Create GET /groups endpoint
+  - Implement view homepage to display expenses
+  - Create GET /expenses/your-expenses endpoint
 
-- Feature: View group
-
-  - Implement view group page
-  - Create GET /groups/
-    endpoint
-
-- Feature: Add group
-
-  - Add form input to add group
-
-- Feature: Update group
-
-  - Implement update group form
-  - Create PUT /groups/
-    endpoint
-
-- Feature: Create account
-
-  - Implement form to create account
-
-- Feature: Add expense
+- Feature: Add expense to user
 
   - Add form input to add expense
+  - create POST /expenses/user endpoint
 
-- Feature: Update expense
+- Feature: Update expenses
 
-  - Implement update expense form
-  - Create PUT /groups/
-    /expenses/
+  - Implement update group form
+  - Create PUT /expenses/:id
     endpoint
 
-- Feature: Delete expense
+- Feature: delete expense
 
-  - Implement delete expense functionality
-  - Create DELETE /groups/
-    /expenses/
-    endpoint
-
-- Feature: Home page
-
-- Feature: Create account
-
-  - Implement register page + form
-  - Create POST /users/register endpoint
+  - implement a modal to delete an expense
+  - create delete/expenses/:id endpoint
 
 - Bug fixes
 
@@ -438,3 +179,5 @@ Response:
 - Add categories to groups
 - Add categories to expenses
 - Add page not found
+- Add group functionality
+- Add member functionality

@@ -1,0 +1,65 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.expenses-list {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 800px;
+  background: $p-light;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: $p-dark;
+  }
+
+  &__items {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid $s-light;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    background: #fff;
+    transition: background 0.3s;
+
+    &:hover {
+      background: $s-light;
+    }
+  }
+
+  &__item-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: $p-dark;
+    text-transform: capitalize;
+  }
+
+  &__item-total-amount,
+  &__item-your-amount,
+  &__item-date {
+    font-size: 1rem;
+    color: $s-dark;
+  }
+
+  &__item-total-amount,
+  &__item-your-amount {
+    font-weight: 600;
+    color: $s-dark;
+  }
+
+  &__item-your-amount {
+    color: $p-dark;
+  }
+}
