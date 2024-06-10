@@ -170,6 +170,12 @@ Response:
 
 ## Nice-to-haves
 
+- Add page not found
+- Add group functionality
+- Add member functionality
+
+## Future features
+
 - Add authentication to the app
 - Add a currency conversion API
 - Add notification via a third party API (sending email notifications)
@@ -178,6 +184,3 @@ Response:
 - Add search functionality
 - Add categories to groups
 - Add categories to expenses
-- Add page not found
-- Add group functionality
-- Add member functionality
