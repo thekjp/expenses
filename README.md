@@ -1,6 +1,4 @@
-# Project Title
-
-Paymate
+# Paymate
 
 ## Overview
 
@@ -26,10 +24,11 @@ When travelling with a group of friends, there are often group bills that are ac
 
 ### User Profile
 
-- Young travelers:
-  - looking to keep track of shared expenses with friends
-  - wanting to split bills easily
-  - needing to see their share of expenses clearly
+Young travelers:
+
+- looking to keep track of shared expenses with friends
+- wanting to split bills easily
+- needing to see their share of expenses clearly
 
 ### Features
 
@@ -78,7 +77,7 @@ Future Features:
 - Add expense
 - Edit expense
 
-sitemap image
+![Sitemap Diagram](./src/assets/images/ReadMe/sitemap.png "Sitemap Diagram")
 
 ### Mockups
 
