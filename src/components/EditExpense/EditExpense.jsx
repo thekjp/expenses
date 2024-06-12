@@ -51,7 +51,7 @@ function EditExpense() {
         total_amount: totalAmount,
         date: date,
       });
-      navigate("/main");
+      navigate("/home");
     } catch (error) {
       console.error("Error updating expense: ", error);
     }

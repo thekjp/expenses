@@ -34,7 +34,7 @@ function AddExpense() {
         date: date,
       });
       console.log(response.data);
-      navigate("/main");
+      navigate("/home");
     } catch (error) {
       console.error("Error adding expense: ", error);
     }

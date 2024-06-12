@@ -13,7 +13,7 @@ function LoginPage() {
     //add mock authentication
     if (email && password) {
       console.log("Logged in:", { email, password });
-      navigate("/main"); //redirect to MainPage
+      navigate("/home"); //redirect to MainPage
     } else {
       alert("Please enter an email and a password.");
     }
