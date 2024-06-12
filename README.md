@@ -222,14 +222,14 @@ Response:
 
 - Feature: Update expenses
 
-  - Implement update group form
+  - Implement update expense form
   - Create PUT /expenses/:id
     endpoint
 
 - Feature: delete expense
 
   - implement a modal to delete an expense
-  - create delete/expenses/:id endpoint
+  - create DELETE /expenses/:id endpoint
 
 - Bug fixes
 
