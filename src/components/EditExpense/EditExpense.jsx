@@ -103,7 +103,7 @@ function EditExpense() {
             required
           />
         </div>
-        <button className="edit-expense__button" type="submit">
+        <button className="edit-expense__button btn btn--primary" type="submit">
           Save Changes
         </button>
       </form>
