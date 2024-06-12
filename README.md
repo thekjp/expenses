@@ -111,22 +111,76 @@ Response:
 
 ```
 [
-    {
-        "expense_id": 9,
-        "title": "dinner at joeys",
-        "total_amount": "100.00",
-        "date": "2024-06-06T07:00:00.000Z",
-        "group_name": "Trip to Rio",
-        "amount": "50.00"
-    },
-    {
-        "expense_id": 10,
-        "title": "dinner at joeys",
-        "total_amount": "100.00",
-        "date": "2024-06-06T07:00:00.000Z",
-        "group_name": "Trip to Paris",
-        "amount": "50.00"
-    }
+   {
+    "expense_id": 1,
+    "title": "Dinner at Jacks",
+    "total_amount": "200.00",
+    "date": "2024-03-03T08:00:00.000Z",
+    "created_at": "2024-06-11T14:01:46.000Z",
+    "updated_at": "2024-06-11T14:01:46.000Z"
+  },
+  {
+    "expense_id": 2,
+    "title": "Dinner at Joey's",
+    "total_amount": "255.00",
+    "date": "2024-03-18T07:00:00.000Z",
+    "created_at": "2024-06-11T14:47:30.000Z",
+    "updated_at": "2024-06-11T14:47:30.000Z"
+  }
+]
+```
+
+**POST /expenses/user**
+
+- Crete an expense for a user
+
+Response:
+
+```
+[
+  {
+    "id": 12,
+    "user_id": 1,
+    "title": "Breakfast at Jones",
+    "total_amount": "75.00",
+    "date": "2024-06-02T07:00:00.000Z",
+    "created_at": "2024-06-12T15:28:42.000Z",
+    "updated_at": "2024-06-12T15:28:42.000Z"
+  }
+]
+```
+
+**PUT /expenses/:id**
+
+- Update an expense
+
+Response:
+
+```
+[
+  {
+    "id": 12,
+    "user_id": 1,
+    "title": "Breakfast at Cool Club",
+    "total_amount": "75.00",
+    "date": "2024-06-02T07:00:00.000Z",
+    "created_at": "2024-06-12T15:28:42.000Z",
+    "updated_at": "2024-06-12T15:28:42.000Z"
+  }
+]
+```
+
+**DELETE /expenses/:id**
+
+- Delete an expense
+
+Response:
+
+```
+[
+  {
+    "message": "Expense successfully deleted."
+  }
 ]
 ```
 

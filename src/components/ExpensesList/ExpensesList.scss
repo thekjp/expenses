@@ -11,6 +11,12 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
   &__title {
     font-size: 2rem;
     margin-bottom: 1.5rem;
@@ -53,7 +59,7 @@
     width: 80%;
     word-wrap: wrap;
 
-    @include medium{
+    @include medium {
       width: 50%;
       display: flex;
       flex-direction: row;

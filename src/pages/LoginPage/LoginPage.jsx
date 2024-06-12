@@ -10,10 +10,10 @@ function LoginPage() {
   const handleLogin = (event) => {
     event.preventDefault();
 
-    //add mock authentication
+    // Add mock authentication
     if (email && password) {
       console.log("Logged in:", { email, password });
-      navigate("/home"); //redirect to MainPage
+      navigate("/home"); // Redirect to MainPage
     } else {
       alert("Please enter an email and a password.");
     }
@@ -21,30 +21,40 @@ function LoginPage() {
 
   return (
     <div className="login">
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
+      <div className="login__container">
+        <h1 className="login__title">Login to your account</h1>
+        <form className="login__form" onSubmit={handleLogin}>
+          <div className="login__form-container">
+            <label className="login__form-label" htmlFor="email">
+              Email:
+            </label>
+            <input
+              className="login__form-input"
+              type="email"
+              id="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              required
+            />
+          </div>
+          <div className="login__form-container">
+            <label className="login__form-label" htmlFor="password">
+              Password:
+            </label>
+            <input
+              className="login__form-input"
+              type="password"
+              id="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              required
+            />
+          </div>
+          <button className="login__button" type="submit">
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

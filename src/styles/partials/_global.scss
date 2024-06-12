@@ -1,12 +1,14 @@
+@use './mixins' as *;
+
 /* -------------------------------------------------------------------------- */
 /*                                   COLORS                                   */
 /* -------------------------------------------------------------------------- */
 
 /* --------------------------------- PRIMARY -------------------------------- */
 
-$p-dark: #13182C;
+$p-dark: rgb(22,36,72);
 $p-light: #FFF;
-$p-highlight: #2E66e5;
+$p-highlight: rgb(105,53,211);
 $p-highlight-opague: rgba(46, 101, 229, 0.07);
 
 /* -------------------------------- SECONDARY ------------------------------- */
@@ -41,3 +43,51 @@ $d-padding: 1.5rem;
 /* -------------------------------------------------------------------------- */
 
 $transition: 0.2s;
+
+/* -------------------------------------------------------------------------- */
+/*                                   BUTTONS                                  */
+/* -------------------------------------------------------------------------- */
+
+.btn {
+    text-align: center;
+    padding: calc($m-padding / 2) $m-padding;
+    border-radius: 20px;
+    width: 100%;
+
+    @include tablet {
+        width: auto;
+    }
+
+    &--primary {
+        color: $p-light;
+        background-color: $p-highlight;
+        transition: $transition;
+        border: none;
+
+        &:hover {
+            background-color: $bg-dark;
+        }
+    }
+
+    &--secondary {
+        color: $s-light;
+        background-color: $p-light;
+        border: 1px $s-light solid;
+        transition: $transition;
+
+        &:hover {
+            color: $p-highlight;
+            border-color: $p-highlight;
+        }
+    }
+
+    &--delete {
+        color: $p-light;
+        background-color: $spt-two;
+        transition: $transition;
+
+        &:hover {
+            background-color: $bg-dark;
+        }
+    }
+}
