@@ -1,0 +1,93 @@
+@use './mixins' as *;
+
+/* -------------------------------------------------------------------------- */
+/*                                   COLORS                                   */
+/* -------------------------------------------------------------------------- */
+
+/* --------------------------------- PRIMARY -------------------------------- */
+
+$p-dark: rgb(22,36,72);
+$p-light: #FFF;
+$p-highlight: rgb(105,53,211);
+$p-highlight-opague: rgba(46, 101, 229, 0.07);
+
+/* -------------------------------- SECONDARY ------------------------------- */
+
+$s-dark: #5C667E;
+$s-light: #BDC5D5;
+
+/* ---------------------------- BACKGROUND COLORS --------------------------- */
+
+$bg-dark: #232940;
+$bg-light: #F7F8F9;
+
+/* ---------------------------- SUPPORTING COLORS --------------------------- */
+
+$spt-one: #158463;
+$spt-two:#C94515;
+
+/* -------------------------------------------------------------------------- */
+/*                                   PADDING                                  */
+/* -------------------------------------------------------------------------- */
+
+/* --------------------------------- MOBILE --------------------------------- */
+
+$m-padding: 1rem;
+
+/* --------------------------------- DESKTOP -------------------------------- */
+
+$d-padding: 1.5rem;
+
+/* -------------------------------------------------------------------------- */
+/*                                  ANIMATION                                 */
+/* -------------------------------------------------------------------------- */
+
+$transition: 0.2s;
+
+/* -------------------------------------------------------------------------- */
+/*                                   BUTTONS                                  */
+/* -------------------------------------------------------------------------- */
+
+.btn {
+    text-align: center;
+    padding: calc($m-padding / 2) $m-padding;
+    border-radius: 20px;
+    width: 100%;
+
+    @include tablet {
+        width: auto;
+    }
+
+    &--primary {
+        color: $p-light;
+        background-color: $p-highlight;
+        transition: $transition;
+        border: none;
+
+        &:hover {
+            background-color: $bg-dark;
+        }
+    }
+
+    &--secondary {
+        color: $s-light;
+        background-color: $p-light;
+        border: 1px $s-light solid;
+        transition: $transition;
+
+        &:hover {
+            color: $p-highlight;
+            border-color: $p-highlight;
+        }
+    }
+
+    &--delete {
+        color: $p-light;
+        background-color: $spt-two;
+        transition: $transition;
+
+        &:hover {
+            background-color: $bg-dark;
+        }
+    }
+}

@@ -1,0 +1,92 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.expenses-list {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 800px;
+  background: $p-light;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: $p-dark;
+  }
+
+  &__items {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    border: 1px solid $s-light;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    background: #fff;
+    transition: background 0.3s;
+
+    &:hover {
+      background: $s-light;
+    }
+
+    @include medium {
+      display: flex;
+      flex-direction: row;;
+    }
+  }
+
+  &__item-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: $p-dark;
+    text-transform: capitalize;
+    width: 80%;
+    word-wrap: wrap;
+
+    @include medium {
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+    }
+  }
+
+  &__item-total-amount,
+  &__item-date {
+    font-size: 1rem;
+    color: $s-dark;
+    width: 20%;
+  }
+
+  &__item-total-amount,
+  &__item-your-amount {
+    font-weight: 600;
+    color: $s-dark;
+  }
+
+  &__item-edit,
+  &__item-delete {
+    width: 5%;
+    cursor: pointer;
+  }
+
+  &__item-your-amount {
+    color: $p-dark;
+  }
+}

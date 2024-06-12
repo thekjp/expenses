@@ -1,0 +1,26 @@
+@use "../../styles/partials/global" as *;
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.footer {
+    
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: $m-padding;
+    }
+
+    &__text {
+        font-size: 0.688rem;
+        line-height: 1rem;
+        font-weight: 400;
+        color: $s-dark;
+
+        @include desktop {
+            font-size: 0.75rem;
+            line-height: 1.125rem;
+            font-weight: 400;
+        }
+    }
+}

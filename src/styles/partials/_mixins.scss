@@ -1,0 +1,29 @@
+@use './variables' as *;
+
+/* -------------------------------------------------------------------------- */
+/*                                MEDIA QUERIES                               */
+/* -------------------------------------------------------------------------- */
+
+@mixin small {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media (min-width: 576px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
