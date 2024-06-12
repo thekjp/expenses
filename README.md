@@ -4,14 +4,14 @@
 
 The app is designed to make it easier splitting bills in a group. The target audience will be young travellers.
 
-# Dev Instructions
+## Dev Instructions
 
-Front-End:
+**Front-End:**
 
 1. run 'npm i' to set up node modules
 2. run 'npm start'
 
-Back-End:
+**Back-End:**
 
 1. set up an .env file
 2. run 'npm run migrate'
@@ -20,7 +20,7 @@ Back-End:
 
 ### Problem
 
-When travelling with a group of friends, there are often group bills that are accumalated and are difficult to keep track of. Expenses App's aim is to make the process simplier and easier to share expenses.
+When travelling with a group of friends, there are often group bills that are accumalated and are difficult to keep track of. Paymate aims to make the process simplier and easier to share expenses.
 
 ### User Profile
 
@@ -32,14 +32,14 @@ Young travelers:
 
 ### Features
 
-MVP:
+**MVP:**
 
 - As a user, I want to be able to see my expenses
 - As a user, I want to be able to add an expense
 - As a user, I want to be able to edit an expense
 - As a user, I want to be able to delete an expense
 
-Future Features:
+**Future Features:**
 
 - As a user, I want to create an account to managed my shared expenses.
 - As a user, I want to log in to my account to managed shared expenses.

@@ -9,7 +9,7 @@ import AddGroup from "./components/AddGroup/AddGroup";
 import GroupItem from "./components/GroupItem/GroupItem";
 import EditGroup from "./components/EditGroup/EditGroup";
 import ExpensesList from "./components/ExpensesList/ExpensesList";
-// import AddExpense from "./components/AddExpense/AddExpense";
+import AddExpense from "./components/AddExpense/AddExpense";
 // import ExpensesItem from "./components/ExpensesItem/ExpensesItem";
 // import EditExpense from "./components/EditExpense/EditExpense";
 
@@ -26,7 +26,7 @@ function App() {
           <Route path="/groups/:id" element={<GroupItem />} />
           <Route path="/groups/:id/edit" element={<EditGroup />} />
           <Route path="/expenses" element={<ExpensesList />} />
-          {/*<Route path="/expenses/add" element={<AddExpense />} />*/}
+          <Route path="/expenses/add" element={<AddExpense />} />
           {/* <Route path="/expenses/:id" element={<ExpensesItem />} /> */}
           {/*<Route path="/expenses/:id/edit" element={<EditExpense />} /> */}
         </Routes>

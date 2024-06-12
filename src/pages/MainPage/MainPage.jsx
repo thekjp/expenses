@@ -1,10 +1,10 @@
-import YourExpenses from "../../components/YourExpenses/YourExpenses";
+import ExpensesList from "../../components/ExpensesList/ExpensesList";
 import "./MainPage.scss";
 
 function MainPage() {
   return (
     <div className="main-page">
-      <YourExpenses />
+      <ExpensesList />
     </div>
   );
 }
