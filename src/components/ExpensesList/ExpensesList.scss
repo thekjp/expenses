@@ -4,17 +4,26 @@
 
 .expenses-list {
   width: 90%;
-  margin: 0 auto;
+  margin: 50px auto;
   max-width: 800px;
   background: $p-light;
   padding: 2rem;
-  border-radius: 1.125rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   &__button-container {
     display: flex;
     justify-content: center;
     margin: 2rem 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__images {
+    width: 30%;
   }
 
   &__title {
@@ -27,6 +36,7 @@
   &__items {
     list-style: none;
     padding: 0;
+    width: 70%;
   }
 
   &__item {
@@ -80,9 +90,11 @@
     color: $s-dark;
   }
 
-  &__item-edit,
-  &__item-delete {
-    width: 2.5%;
+  &__icons {
+    display:flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 9%;
     cursor: pointer;
   }
 

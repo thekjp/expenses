@@ -3,8 +3,11 @@
 @import "../../styles/partials/variables.scss";
 
 .footer {
-    
+    width: 100%;
+    bottom: 0;
+
     &__container {
+        background-color: $p-dark;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -15,7 +18,7 @@
         font-size: 0.688rem;
         line-height: 1rem;
         font-weight: 400;
-        color: $s-dark;
+        color: $p-light;
 
         @include desktop {
             font-size: 0.75rem;
