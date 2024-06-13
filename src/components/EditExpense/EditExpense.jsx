@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import BackIcon from "../../assets/icons/back-icon.svg";
 import axios from "axios";
 import "./EditExpense.scss";
 
@@ -58,8 +59,17 @@ function EditExpense() {
   };
 
   return (
-    <div className="edit-expense">
-      <h1 className="edit-expense__title">Edit Expense</h1>
+    <section className="edit-expense">
+      <div className="edit-epense__header">
+        <Link className="edit-expense__back-icon-link" to={-1}>
+          <img
+            className="edit-expense__back-icon-img"
+            src={BackIcon}
+            alt="back icon"
+          />
+        </Link>
+        <h1 className="edit-expense__title">Edit Expense</h1>
+      </div>
       <form className="edit-expense__form" onSubmit={handleSubmit}>
         <div className="edit-expense__form-group">
           <label className="edit-expense__label" htmlFor="title">
@@ -107,7 +117,7 @@ function EditExpense() {
           Save Changes
         </button>
       </form>
-    </div>
+    </section>
   );
 }
 

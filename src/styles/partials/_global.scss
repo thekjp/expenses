@@ -19,7 +19,7 @@ $s-light: #BDC5D5;
 /* ---------------------------- BACKGROUND COLORS --------------------------- */
 
 $bg-dark: #232940;
-$bg-light: #F7F8F9;
+$bg-light: #F6EFEB;
 
 /* ---------------------------- SUPPORTING COLORS --------------------------- */
 
@@ -85,6 +85,7 @@ $transition: 0.2s;
         color: $p-light;
         background-color: $spt-two;
         transition: $transition;
+        border:none;
 
         &:hover {
             background-color: $bg-dark;
