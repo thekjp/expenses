@@ -70,53 +70,58 @@ function EditExpense() {
         </Link>
         <h1 className="edit-expense__title">Edit Expense</h1>
       </div>
-      <form className="edit-expense__form" onSubmit={handleSubmit}>
-        <div className="edit-expense__form-group">
-          <label className="edit-expense__label" htmlFor="title">
-            Title
-          </label>
-          <input
-            className="edit-expense__input"
-            type="text"
-            id="title"
-            name="title"
-            value={title}
-            onChange={handleTitleChange}
-            required
-          />
-        </div>
-        <div className="edit-expense__form-group">
-          <label className="edit-expense__label" htmlFor="total_amount">
-            Total Amount
-          </label>
-          <input
-            className="edit-expense__input"
-            type="number"
-            id="totalAmount"
-            name="totalAmount"
-            value={totalAmount}
-            onChange={handleTotalAmountChange}
-            required
-          />
-        </div>
-        <div className="edit-expense__form-group">
-          <label className="edit-expense__label" htmlFor="date">
-            Date
-          </label>
-          <input
-            className="edit-expense__input"
-            type="date"
-            id="date"
-            name="date"
-            value={date}
-            onChange={handleDateChange}
-            required
-          />
-        </div>
-        <button className="edit-expense__button btn btn--primary" type="submit">
-          Save Changes
-        </button>
-      </form>
+      <div className="form_container">
+        <form className="edit-expense__form" onSubmit={handleSubmit}>
+          <div className="edit-expense__form-group">
+            <label className="edit-expense__label" htmlFor="title">
+              Title
+            </label>
+            <input
+              className="edit-expense__input"
+              type="text"
+              id="title"
+              name="title"
+              value={title}
+              onChange={handleTitleChange}
+              required
+            />
+          </div>
+          <div className="edit-expense__form-group">
+            <label className="edit-expense__label" htmlFor="total_amount">
+              Total Amount
+            </label>
+            <input
+              className="edit-expense__input"
+              type="number"
+              id="totalAmount"
+              name="totalAmount"
+              value={totalAmount}
+              onChange={handleTotalAmountChange}
+              required
+            />
+          </div>
+          <div className="edit-expense__form-group">
+            <label className="edit-expense__label" htmlFor="date">
+              Date
+            </label>
+            <input
+              className="edit-expense__input"
+              type="date"
+              id="date"
+              name="date"
+              value={date}
+              onChange={handleDateChange}
+              required
+            />
+          </div>
+          <button
+            className="edit-expense__button btn btn--primary"
+            type="submit"
+          >
+            Save Changes
+          </button>
+        </form>
+      </div>
     </section>
   );
 }
