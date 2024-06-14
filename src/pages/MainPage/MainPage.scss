@@ -2,6 +2,18 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
-body {
-    background-color: $bg-light;
+.main {
+    &-containter {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__left {
+        width: 30%;
+        background-color: $bg-light;
+    }
+
+    &__right {
+        width: 70%;
+    }
 }

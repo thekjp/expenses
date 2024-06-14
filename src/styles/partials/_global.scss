@@ -52,6 +52,10 @@ $transition: 0.2s;
 /*                                   BUTTONS                                  */
 /* -------------------------------------------------------------------------- */
 
+body {
+    background-color: $bg-light;
+}
+
 .btn {
     text-align: center;
     padding: calc($m-padding / 2) $m-padding;

@@ -6,9 +6,11 @@ function Header() {
   return (
     <section className="header">
       <div className="header-contatiner">
-        <div className="header__left">
-          <img src={Logo} alt="logo" />
-        </div>
+        <Link className="header-logo__link" to="/home">
+          <div className="header__left">
+            <img src={Logo} alt="logo" />
+          </div>
+        </Link>
       </div>
     </section>
   );
