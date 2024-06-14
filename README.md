@@ -8,7 +8,7 @@ The app is designed to make it easier splitting bills in a group. The target aud
 
 **API:**
 
-[link](https://github.com/thekjp/expenses-api)
+[github.com/thekjp/expenses-api](https://github.com/thekjp/expenses-api)
 
 ## Dev Instructions
 
