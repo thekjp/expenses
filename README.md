@@ -4,6 +4,12 @@
 
 The app is designed to make it easier splitting bills in a group. The target audience will be young travellers.
 
+## Link to API
+
+**API:**
+
+[github.com/thekjp/expenses-api](https://github.com/thekjp/expenses-api)
+
 ## Dev Instructions
 
 **Front-End:**
@@ -238,11 +244,13 @@ Response:
 ## Nice-to-haves
 
 - Add page not found
-- Add group functionality
-- Add member functionality
+- Add expense items
+- Add members
 
 ## Future features
 
+- Add group functionality
+- Add member functionality
 - Add authentication to the app
 - Add a currency conversion API
 - Add notification via a third party API (sending email notifications)

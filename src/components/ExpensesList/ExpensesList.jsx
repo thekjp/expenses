@@ -41,39 +41,42 @@ function ExpensesList() {
 
   return (
     <section className="expenses-list">
-      <h1 className="expenses-list__title">Expenses</h1>
-      <div className="expenses-list__button-container">
-        <Link className="expenses-list__new-expenses" to={`/expenses/add`}>
-          <button className="btn btn--primary">New Expense</button>
-        </Link>
-      </div>
-      <ul className="expenses-list__items">
-        {expenses?.map((expense) => (
-          <li key={expense.expense_id} className="expenses-list__item">
-            <div className="expenses-list__item-title">{expense.title}</div>
-            <div className="expenses-list__item-total-amount">
-              ${expense.total_amount}
-            </div>
-            <div className="expenses-list__item-date">
-              {new Date(expense.date).toLocaleDateString()}
-            </div>
-            <Link
-              className="expenses-list__item-edit"
-              to={`/expenses/${expense.expense_id}/edit`}
-            >
-              <img src={EditIcon} alt="edit icon" />
-            </Link>
-            <div
-              className="expenses-list__item-delete"
-              onClick={() =>
-                handleDeleteClick(expense.expense_id, expense.title)
-              }
-            >
-              <img src={DeleteIcon} alt="delete icon" />
-            </div>
+      <div className="expenses-list__content">
+        <ul className="expenses-list__items">
+          <li className="expenses-list__header">
+            <div className="expenses-list__header-title">Title</div>
+            <div className="expenses-list__header-amount">Amount</div>
+            <div className="expenses-list__header-date">Date</div>
           </li>
-        ))}
-      </ul>
+          {expenses?.map((expense) => (
+            <li key={expense.expense_id} className="expenses-list__item">
+              <div className="expenses-list__item-title">{expense.title}</div>
+              <div className="expenses-list__item-total-amount">
+                ${expense.total_amount}
+              </div>
+              <div className="expenses-list__item-date">
+                {new Date(expense.date).toLocaleDateString()}
+              </div>
+              <div className="expenses-list__icons">
+                <Link
+                  className="expenses-list__item-edit"
+                  to={`/expenses/${expense.expense_id}/edit`}
+                >
+                  <img src={EditIcon} alt="edit icon" />
+                </Link>
+                <div
+                  className="expenses-list__item-delete"
+                  onClick={() =>
+                    handleDeleteClick(expense.expense_id, expense.title)
+                  }
+                >
+                  <img src={DeleteIcon} alt="delete icon" />
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
       <DeleteExpense
         isOpen={modalIsOpen}
         onClose={handleCloseModal}

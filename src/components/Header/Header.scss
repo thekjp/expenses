@@ -1,0 +1,15 @@
+@use "../../styles/partials/global" as *;
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/variables.scss";
+
+.header {
+    background-color: $p-dark;
+    padding: 1.25rem;
+    top: 0;
+
+    &__left {
+        & img {
+            width: 10%;
+        }
+    }
+}

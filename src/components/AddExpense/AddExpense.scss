@@ -4,7 +4,7 @@
 
 .add-expense {
   width: 90%;
-  margin: 0 auto;
+  margin: 10% auto 10% auto;
   max-width: 600px;
   background: $p-light;
   padding: 2rem;
@@ -34,12 +34,13 @@
 
   &__input,
   &__textarea {
-    width: 100%;
+    width: 95%;
     padding: 0.75rem;
     border: 1px solid $s-light;
     border-radius: 4px;
     font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 3%;
   }
 
   &__textarea {
@@ -50,5 +51,6 @@
   &__button {
     align-self: center;
     padding: 0.75rem 2rem;
+    margin-top: 3%;
   }
 }

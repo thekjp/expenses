@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import BackIcon from "../../assets/icons/back-icon.svg";
 import axios from "axios";
 import "./EditExpense.scss";
 
@@ -58,56 +59,70 @@ function EditExpense() {
   };
 
   return (
-    <div className="edit-expense">
-      <h1 className="edit-expense__title">Edit Expense</h1>
-      <form className="edit-expense__form" onSubmit={handleSubmit}>
-        <div className="edit-expense__form-group">
-          <label className="edit-expense__label" htmlFor="title">
-            Title
-          </label>
-          <input
-            className="edit-expense__input"
-            type="text"
-            id="title"
-            name="title"
-            value={title}
-            onChange={handleTitleChange}
-            required
+    <section className="edit-expense">
+      <div className="edit-epense__header">
+        <Link className="edit-expense__back-icon-link" to={-1}>
+          <img
+            className="edit-expense__back-icon-img"
+            src={BackIcon}
+            alt="back icon"
           />
-        </div>
-        <div className="edit-expense__form-group">
-          <label className="edit-expense__label" htmlFor="total_amount">
-            Total Amount
-          </label>
-          <input
-            className="edit-expense__input"
-            type="number"
-            id="totalAmount"
-            name="totalAmount"
-            value={totalAmount}
-            onChange={handleTotalAmountChange}
-            required
-          />
-        </div>
-        <div className="edit-expense__form-group">
-          <label className="edit-expense__label" htmlFor="date">
-            Date
-          </label>
-          <input
-            className="edit-expense__input"
-            type="date"
-            id="date"
-            name="date"
-            value={date}
-            onChange={handleDateChange}
-            required
-          />
-        </div>
-        <button className="edit-expense__button" type="submit">
-          Save Changes
-        </button>
-      </form>
-    </div>
+        </Link>
+        <h1 className="edit-expense__title">Edit Expense</h1>
+      </div>
+      <div className="form_container">
+        <form className="edit-expense__form" onSubmit={handleSubmit}>
+          <div className="edit-expense__form-group">
+            <label className="edit-expense__label" htmlFor="title">
+              Title
+            </label>
+            <input
+              className="edit-expense__input"
+              type="text"
+              id="title"
+              name="title"
+              value={title}
+              onChange={handleTitleChange}
+              required
+            />
+          </div>
+          <div className="edit-expense__form-group">
+            <label className="edit-expense__label" htmlFor="total_amount">
+              Total Amount
+            </label>
+            <input
+              className="edit-expense__input"
+              type="number"
+              id="totalAmount"
+              name="totalAmount"
+              value={totalAmount}
+              onChange={handleTotalAmountChange}
+              required
+            />
+          </div>
+          <div className="edit-expense__form-group">
+            <label className="edit-expense__label" htmlFor="date">
+              Date
+            </label>
+            <input
+              className="edit-expense__input"
+              type="date"
+              id="date"
+              name="date"
+              value={date}
+              onChange={handleDateChange}
+              required
+            />
+          </div>
+          <button
+            className="edit-expense__button btn btn--primary"
+            type="submit"
+          >
+            Save Changes
+          </button>
+        </form>
+      </div>
+    </section>
   );
 }
 

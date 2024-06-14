@@ -22,7 +22,7 @@ function LoginPage() {
   return (
     <div className="login">
       <div className="login__container">
-        <h1 className="login__title">Login to your account</h1>
+        <h1 className="login__title">Login</h1>
         <form className="login__form" onSubmit={handleLogin}>
           <div className="login__form-container">
             <label className="login__form-label" htmlFor="email">

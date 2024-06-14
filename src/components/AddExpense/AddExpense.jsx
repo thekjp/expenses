@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import BackIcon from "../../assets/icons/back-icon.svg";
 import axios from "axios";
 import "./AddExpense.scss";
 
@@ -42,6 +43,13 @@ function AddExpense() {
 
   return (
     <section className="add-expense">
+      <Link className="add-expense__back-icon-link" to={-1}>
+        <img
+          className="add-expense__back-icon-img"
+          src={BackIcon}
+          alt="back icon"
+        />
+      </Link>
       <h1 className="add-expense__title">Add New Expense</h1>
       <form className="add-expense__form" onSubmit={handleSubmit}>
         <div className="add-expense__form-container">
