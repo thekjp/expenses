@@ -6,10 +6,9 @@
   width: 90%;
   margin: 50px auto;
   max-width: 800px;
-  background: $p-light;
-  padding: 2rem;
-  border-radius: 50px;
-  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #F0ECFB;
+  padding: 4px 2px 0px 4px;
+  border-radius: 18px;
 
   &__button-container {
     display: flex;
@@ -20,10 +19,7 @@
   &__content {
     display: flex;
     flex-direction: row;
-  }
-
-  &__images {
-    width: 30%;
+    margin-left: 10px;
   }
 
   &__title {
@@ -36,7 +32,54 @@
   &__items {
     list-style: none;
     padding: 0;
-    width: 70%;
+    width: 98%;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 18px;
+    margin-bottom: 0.5rem;
+    transition: background 0.3s;
+    background-color: $p-dark;
+    color: $p-light;
+
+    @include medium {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-transform: capitalize;
+      width: 80%;
+      word-wrap: wrap;
+
+      @include medium {
+        width: 58%;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+      }
+    }
+
+    &-amount {
+      font-weight: 600;
+      font-size: 1rem;
+      width: 25%;
+    }
+
+    &-date {
+      font-weight: 600;
+      font-size: 1rem;
+      width: 35%;
+    }
+    
   }
 
   &__item {
@@ -44,11 +87,11 @@
     flex-direction: column;    
     align-items: center;
     gap: 1.5rem;
-    padding: 1rem;
+    padding: 0.75rem;
     border: none;
     border-radius: 18px;
-    margin-bottom: 1rem;
-    background: $bg-light;
+    margin-bottom: 0.5rem;
+    background: $p-light;
     transition: background 0.3s;
 
     &:hover {

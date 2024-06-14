@@ -41,15 +41,13 @@ function ExpensesList() {
 
   return (
     <section className="expenses-list">
-      <h1 className="expenses-list__title">Expenses</h1>
-      <div className="expenses-list__button-container">
-        <Link className="expenses-list__new-expenses" to={`/expenses/add`}>
-          <button className="btn btn--primary">New Expense</button>
-        </Link>
-      </div>
       <div className="expenses-list__content">
-        <div className="expenses-list__images"></div>
         <ul className="expenses-list__items">
+          <li className="expenses-list__header">
+            <div className="expenses-list__header-title">Title</div>
+            <div className="expenses-list__header-amount">Amount</div>
+            <div className="expenses-list__header-date">Date</div>
+          </li>
           {expenses?.map((expense) => (
             <li key={expense.expense_id} className="expenses-list__item">
               <div className="expenses-list__item-title">{expense.title}</div>
